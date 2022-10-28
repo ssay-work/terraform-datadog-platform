@@ -39,7 +39,7 @@ resource "datadog_synthetics_test" "default" {
 
   request_headers = lookup(each.value, "request_headers", null)
   request_query   = lookup(each.value, "request_query", null)
-  set_cookie      = lookup(each.value, "set_cookie", null)
+  # set_cookie      = lookup(each.value, "set_cookie", null)
   device_ids      = lookup(each.value, "device_ids", null)
 
   dynamic "assertion" {
