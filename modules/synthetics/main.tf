@@ -38,7 +38,7 @@ resource "datadog_synthetics_test" "default" {
   ]
 
   request_headers = lookup(each.value, "request_headers", null)
- # request_query   = lookup(each.value, "request_query", null)
+  request_query   = lookup(each.value, "request_query", null)
   set_cookie      = lookup(each.value, "set_cookie", null)
   device_ids      = lookup(each.value, "device_ids", null)
 
@@ -123,7 +123,7 @@ resource "datadog_synthetics_test" "default" {
       allow_failure   = lookup(api_step.value, "allow_failure", false)
       is_critical     = lookup(api_step.value, "is_critical", false)
       request_headers = lookup(api_step.value, "request_headers", false)
-      request_query   = lookup(api_step.value, "request_query", false)
+      # request_query   = lookup(api_step.value, "request_query", false)
 
       dynamic "assertion" {
         for_each = try(api_step.value.assertion, [])
