@@ -16,5 +16,5 @@ output "datadog_synthetics_test_monitor_ids" {
 output "datadog_synthetic_tests" {
   value       = datadog_synthetics_test.default
   description = "The synthetic tests created in DataDog"
-  sensitive = false
+  sensitive = true
 }
